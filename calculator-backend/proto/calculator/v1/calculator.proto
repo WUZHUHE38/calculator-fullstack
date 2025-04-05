@@ -1,0 +1,19 @@
+syntax = "proto3";
+package calculator.v1;
+
+// 关键修复：包含完整的模块路径
+option go_package = "github.com/WUZHUHE38/calculator-fullstack/calculator-backend/gen/go/calculator/v1;calculatorv1";
+
+message CalculateRequest {
+  double operand1 = 1;
+  double operand2 = 2;
+  string operator = 3;
+}
+
+message CalculateResponse {
+  double result = 1;
+}
+
+service CalculatorService {
+  rpc Calculate(CalculateRequest) returns (CalculateResponse);
+}
