@@ -6,15 +6,9 @@
 import { CalculateRequest, CalculateResponse } from "./calculator_pb.ts";
 import { MethodKind } from "@bufbuild/protobuf";
 
-/**
- * @generated from service calculator.v1.CalculatorService
- */
 export const CalculatorService = {
   typeName: "calculator.v1.CalculatorService",
   methods: {
-    /**
-     * @generated from rpc calculator.v1.CalculatorService.Calculate
-     */
     calculate: {
       name: "Calculate",
       I: CalculateRequest,

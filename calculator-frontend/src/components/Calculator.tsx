@@ -1,9 +1,9 @@
 "use client";
-import React, { useState } from "react";
-import { createClient } from "@connectrpc/connect";
-import { createConnectTransport } from "@connectrpc/connect-web";
-import { CalculatorService } from "@/gen/proto/calculator/v1/calculator_connect";
-import "@/app/globals.css";
+import React, {useState} from "react";
+import {createClient} from "@connectrpc/connect";
+import {createConnectTransport} from "@connectrpc/connect-web";
+import {CalculatorService} from "@/gen/proto/calculator/v1/calculator_connect";
+
 export default function Calculator() {
     const [operand1, setOperand1] = useState("");
     const [operand2, setOperand2] = useState("");
@@ -11,12 +11,10 @@ export default function Calculator() {
     const [result, setResult] = useState("");
     const [error, setError] = useState("");
 
-    // 创建 Connect 传输层
     const transport = createConnectTransport({
         baseUrl: "http://localhost:8080", // 后端地址
     });
 
-    // 创建客户端
     const client = createClient(CalculatorService, transport);
 
     const handleSubmit = async (e: React.FormEvent) => {
@@ -90,7 +88,7 @@ export default function Calculator() {
                 </button>
             </form>
             {error && (
-                <div className="mt-4 p-2 bg-red-100 text-red-700 rounded">{error}</div>
+                <div className="mt-4 p-2 bg-red-100 text-red-700 rounded" >{error}</div>
             )}
             {result && (
                 <div className="mt-4 p-4 bg-green-100 text-green-700 rounded">

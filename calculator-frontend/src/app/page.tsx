@@ -1,4 +1,3 @@
-// src/app/page.tsx
 import Calculator from '@/components/Calculator';
 import "./globals.css";
 
